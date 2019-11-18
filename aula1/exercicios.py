@@ -52,6 +52,62 @@ def ex_7():
 
     return print('Cálculo a: {0}\nCálculo b: {1:f}\nCálculo c: {2:f}'.format(calculo_a(primeiro_numero, segundo_numero), calculo_b(primeiro_numero, terceiro_numero), calculo_c(terceiro_numero)).replace('.', ','))
 
+def calcula_peso_ideal(sexo, altura):
+    peso_ideal = 0
+
+    if(str(sexo).upper() == 'M'):
+        peso_ideal = ((72.7 * (int(altura)/100)) - 58)
+    elif(str(sexo).upper() == 'F'):
+        peso_ideal = ((62.1 * (int(altura)/100)) - 44.7)
+    else:
+        peso_ideal = 'erro'
+
+    return peso_ideal
+
+def ex_8():
+    #8.	Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo 
+    # que calcule seu peso ideal, utilizando as seguintes fórmulas:
+    #a.	Para homens: (72.7*h) - 58
+    #b.	Para mulheres: (62.1*h) - 44.7
+    #Obs: o programa deverá perguntar o sexo da pessoa
+    sexo = input('Qual seu sexo (digite M ou F): ')
+    altura = input('Digite a sua altura em centímetros: ')
+
+    calculo_peso_ideal = calcula_peso_ideal(sexo, altura)
+
+    if(calculo_peso_ideal == 'erro'):
+        return print('Insira um sexo válido (M ou F).')
+    else:
+        return print('Seu peso idela é {:.2f}kg'.format(calculo_peso_ideal).replace('.', ','))
+
+def calcula_peso_excedente_dia(peso):
+    peso_maximo = 50
+    peso_excedente_dia = float(peso) - peso_maximo
+
+    return peso_excedente_dia if peso_excedente_dia > 0 else 0
+
+def calcula_multa(peso_excedente):
+    multa_peso = 4
+    calculo_multa = float(peso_excedente) * multa_peso
+
+    return calculo_multa
+
+def ex_9(peso_dia):
+    #9.	João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar 
+    # o rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior 
+    # que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) 
+    # deve pagar uma multa de R$ 4,00 por quilo excedente. 
+    # João precisa que você faça um programa que leia a variável peso (peso de peixes) e 
+    # calcule o excesso. Gravar na variável excesso a quantidade de quilos além do limite e 
+    # na variável multa o valor da multa que João deverá pagar. 
+    # Imprima os dados do programa com as mensagens adequadas.
+
+    peso_excedente = calcula_peso_excedente_dia(peso_dia)
+    multa_dia = calcula_multa(peso_excedente)
+
+    return print('Você excedeu {0:.2f}kg e deverá pagar uma multa de R${1:.2f}.'.format(peso_excedente, multa_dia).replace('.', ','))
+
+
 def run():
     ex_1(input('Digite o tamanho desejado em centímetros: '))
     ex_2(input('Digite o raio do círculo que deseja calcular sua área: '))
@@ -59,5 +115,6 @@ def run():
     ex_5()
     ex_6(input('Digite o grau Farenheit que deseja converter: '))
     ex_7()
+    ex_8()
 
-    
+ex_9(input('Digite o peso (em kg) dos peixes adquiridos hoje: '))
