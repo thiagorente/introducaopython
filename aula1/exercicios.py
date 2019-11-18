@@ -24,13 +24,40 @@ def ex_5():
 
     return print('Seu salário no mês é {:.2f}'.format(calcula_salario(horas_trabalhadas, ganho_hora)).replace('.', ','))
 
-def ex_6():
+def converte_graus(farenheit):
+    return (5 * (float(farenheit) -32)) / 9
+
+def ex_6(graus_farenheit):
     #6.	Faça um Programa que peça a temperatura em graus Farenheit, transforme e mostre a temperatura em graus Celsius.
     # C = (5 * (F-32) / 9).
+    return print('{0:.1f} graus Farenheit é igual a {1:.1f} graus Celsius'.format(float(graus_farenheit), converte_graus(graus_farenheit)))
 
+def calculo_a(primeiro_numero, segundo_numero):
+    return (int(primeiro_numero) * 2) * (int(segundo_numero) / 2)
+
+def calculo_b(primeiro_numero, segundo_numero):
+    return (int(primeiro_numero) * 3) + float(segundo_numero)
+
+def calculo_c(primeiro_numero):
+    return (float(primeiro_numero)**3)
+
+def ex_7():
+    #7.	Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
+    # a.	o produto do dobro do primeiro com metade do segundo .
+    # b.	a soma do triplo do primeiro com o terceiro.
+    # c.	o terceiro elevado ao cubo.
+    primeiro_numero = int(input('Digite um número inteiro: '))
+    segundo_numero = int(input('Digite o segundo número inteiro: '))
+    terceiro_numero = float(input('Digite um número real: '))
+
+    return print('Cálculo a: {0}\nCálculo b: {1:f}\nCálculo c: {2:f}'.format(calculo_a(primeiro_numero, segundo_numero), calculo_b(primeiro_numero, terceiro_numero), calculo_c(terceiro_numero)).replace('.', ','))
 
 def run():
     ex_1(input('Digite o tamanho desejado em centímetros: '))
     ex_2(input('Digite o raio do círculo que deseja calcular sua área: '))
     ex_3(input('Digite o lado do quadrado: '))
     ex_5()
+    ex_6(input('Digite o grau Farenheit que deseja converter: '))
+    ex_7()
+
+    
