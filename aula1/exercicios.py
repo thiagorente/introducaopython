@@ -114,6 +114,14 @@ def ex_9(peso_dia):
 
     return print('Você excedeu {0:.2f}kg e deverá pagar uma multa de R${1:.2f}.'.format(peso_excedente, multa_dia).replace('.', ','))
 
+def calcula_descontos(salario_bruto):
+    porcentagem_ir = 0.11
+    porcentagem_inss = 0.08
+    porcentagem_sindicato = 0.05
+
+    return [(salario_bruto * porcentagem_ir), 
+            (salario_bruto * porcentagem_inss),
+            (salario_bruto * porcentagem_sindicato)]
 
 def ex_10():
     #10.	Faça um Programa que pergunte quanto você ganha por hora e 
@@ -135,9 +143,13 @@ def ex_10():
     ganho_hora = float(input('Informe quanto você ganha por hora: '))
     qtd_horas = int(input('Informe a quantidade de horas trabalhadas no mês: '))
     
-    salario_bruto = calcula_salario(qtd_horas, ganho_hora)
+    salario_bruto = 
+    float(calcula_salario(qtd_horas, ganho_hora))
 
-    return print('Seu salário bruto é R${:.2f}'.format(salario_bruto).replace('.', ','))
+    return print('Seu salário bruto é R${0:.2f}\nVocê paga R${1:.2f} de INSS\nVocê paga R${2:.2f} para o sindicato\nSeu salário líquido é de R${3:.2f}'.format(salario_bruto, 
+                                                                                                                                                               calcula_descontos(salario_bruto)[1], 
+                                                                                                                                                               calcula_descontos(salario_bruto)[2],
+                                                                                                                                                               (salario_bruto - float(calcula_descontos(salario_bruto)[0]) - float(calcula_descontos(salario_bruto)[1]) - float(calcula_descontos(salario_bruto)[2]))).replace('.', ','))
 
 
 def run():
@@ -149,6 +161,5 @@ def run():
     ex_7()
     ex_8()
     ex_9(input('Digite o peso (em kg) dos peixes adquiridos hoje: '))
-
-
+    
 ex_10()
