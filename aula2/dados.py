@@ -1,14 +1,20 @@
 def ex_1():
+    #1. Faça um Programa que leia um vetor de 5 números inteiros e mostre-os.
+    
     vetor = input('Digite 5 numeros inteiros separados por um espaco: ').split()
     for v in vetor :
         numero_inteiro = int(v)
         print(numero_inteiro)
 
 def ex_2(nome):
+    #2. Faça um programa que solicite o nome do usuário e imprima-o na vertical.
+
     for n in nome :
         print(n)
 
 def ex_3():
+    #3. Faça um Programa que leia 4 notas, mostre as notas e a média na tela.
+
     primeira_nota = float(input('Digite a primeira nota: '))
     segunda_nota = float(input('Digite a segunda nota: '))
     terceira_nota = float(input('Digite a terceira nota: '))
@@ -18,6 +24,9 @@ def ex_3():
     print('Sua média é: {:.1f}'.format((primeira_nota + segunda_nota + terceira_nota + quarta_nota) / 4))
 
 def ex_4(caracteres):
+    #4. Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram
+    # lidas. Imprima as consoantes.
+
     cadeia = caracteres.split()
     vogais = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
     qtd_consoantes = 0
@@ -37,6 +46,9 @@ def ex_4(caracteres):
         print('As consoantes digitadas foram: {}'.format(consoantes))
 
 def ex_5(numeros_inteiros):
+    #5. Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os
+    # números pares no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.
+
     vetor_total = []
     for numeros in numeros_inteiros.split(' '):
         vetor_total.append(int(numeros))
@@ -66,6 +78,9 @@ def ex_5(numeros_inteiros):
         print('Você não digitou nenhum número ímpar')
 
 def ex_6(data_nascimento):
+    #6. Faça um programa que solicite a data de nascimento (dd/mm/aaaa) do usuário e imprima a
+    # data com o nome do mês por extenso.
+
     meses = { 1 : 'Janeiro', 2 : 'Fevereiro', 3 : 'Março', 4 : 'Abril', 5 : 'Maio', 6 : 'Junho', 7 : 'Julho', 8 : 'Agosto', 9 : 'Setembro', 10 : 'Outubro', 11 : 'Novembro', 12 : 'Dezembro' }
     data_quebrada = data_nascimento.split('/')
     dia = data_quebrada[0]
