@@ -143,8 +143,7 @@ def ex_10():
     ganho_hora = float(input('Informe quanto você ganha por hora: '))
     qtd_horas = int(input('Informe a quantidade de horas trabalhadas no mês: '))
     
-    salario_bruto = 
-    float(calcula_salario(qtd_horas, ganho_hora))
+    salario_bruto = float(calcula_salario(qtd_horas, ganho_hora))
 
     return print('Seu salário bruto é R${0:.2f}\nVocê paga R${1:.2f} de INSS\nVocê paga R${2:.2f} para o sindicato\nSeu salário líquido é de R${3:.2f}'.format(salario_bruto, 
                                                                                                                                                                calcula_descontos(salario_bruto)[1], 
@@ -161,5 +160,4 @@ def run():
     ex_7()
     ex_8()
     ex_9(input('Digite o peso (em kg) dos peixes adquiridos hoje: '))
-    
-ex_10()
+    ex_10()
